@@ -55,24 +55,42 @@
 		    <tr>
 		      <td>Vattentemp</td>
 		      <td>37,7°</td>
-
 		    </tr>
 		    <tr>
-		      <td>25:23:00</td>
-		      <td>37,7°</td>
+		      <td>Väder</td>
+		      <td>Sol</td>
 		    </tr>
 		    <tr>
-		      <td>25:23:00</td>
-		      <td>37,7°</td>   
+		      <td>Antal åk</td>
+		      <td>435</td>   
 		   </tr>
 		  </tbody>
 		</table>
 	</div>           
 	<div class="span12">
-		<ul class="unstyled">
-			<li>
-				<img src="/uploads/Vässarö-12.jpg" alt="Funny picture" />
-			</li>
-		</ul> 
+		<ul class="unstyled photo-list">
+			<%= erb :photos, :layout => false %>
+		</ul>     
+		<br />
+		<center>                                         
+			<div>
+				<a href="#" class="btn btn-success load-more"><i class="icon-plus-sign icon-white"></i> Ladda flera bilder</a>
+			</div>
+		</center>
 	</div>
 </div>
+
+
+<div id='fb-root'></div>
+<script src='http://connect.facebook.net/en_US/all.js'></script>
+
+<% content_for :pagescript do %>
+	<script type="text/javascript">
+		FB.init({appId: "269947893109750", status: true, cookie: true});
+
+		$(function(){
+			setup();		
+		});
+	</script>
+<% end %>
+

@@ -22,14 +22,18 @@
 	<div class="container">
 
 		<%= yield %>
-		
+		                       
+		<hr>
 		<footer class="footer">
 			<p class="pull-right"><a href="/about">Hur funkar det här?</a> - <a href="#">Back to top</a></p>
 		</footer>
 	</div><!-- /container -->
 
 	<script src="/js/zepto.js"></script>
+	<script src="/js/swipe.js"></script>
 	<script src="/js/app.js"></script>
-
+       
+	<% yield_content :pagescript %>
+	
 	</body>
 </html>
