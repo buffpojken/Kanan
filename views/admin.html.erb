@@ -1,0 +1,49 @@
+<header class="jumbotron subhead" id="overview">
+	<h1>Command Center</h1>    
+</header>
+
+<div class="row">
+	<div class="span4">
+		<h3>Pump</h3>
+		<table class="table">
+			<tr>
+				<td>
+					Status
+				</td>
+				<td class="on pump-status">
+					På
+				</td>
+			</tr> 
+		</table>	
+		<a href="#" class="btn pump-btn" style="width:94%">Stäng av</a>	
+		<br /><br />
+	</div>
+	<div class="span4">
+		<h3>Stoppljus</h3>
+		<table class="table">
+			<tr>          
+				<td>
+				<div class="btn-group light-btn" style="width:140px;margin:20px auto;">
+					<a href="#" class="btn off" data-color="red">Röd</a>
+					<a href="#" class="btn yellow" data-color="yellow">Gul</a>
+					<a href="#" class="btn on" data-color="green">Grön</a>
+				</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="span4">
+		<h3>MOTD</h3>        
+		 <input type="text" placeholder="Ninja laser..." style="width:100%;margin:5px 0px 20px 0px"/>
+		<a href="#" class="btn" style="width:94%">Uppdatera</a>			
+	</div>           
+</div>
+
+
+<% content_for :pagescript do %>
+	<script type="text/javascript">
+		$(function(){
+			admin();		
+		});
+	</script>
+<% end %>

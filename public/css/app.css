@@ -7,3 +7,6 @@ body{margin-top:50px}
 .image-item .image:hover .photo-mask{top:0px}
 .share-buttons{position:relative;margin:15px auto;width:425px;}
 .share-buttons-phone{width:100%;text-align:center;margin:5px 0px 0px 0px}
+.on{color:green}
+.off{color:red}
+.yellow{color:yellow}

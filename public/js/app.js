@@ -59,3 +59,80 @@ function setup(){
 		document.getElementById('slider')
 	);	
 }
+
+
+// Admin Structure
+var commander = {
+	initialize: function(opts){
+		this.options 	= $.extend({autostart: true}, opts);
+		if(this.options.autostart){
+			this.timer		= setInterval(this.poll.bind(this), 2000);
+		}                                     
+		$(".pump-btn").bind('click', this.toggle_pump.bind(this));
+		$(".light-btn a").bind('click', this.toggle_light.bind(this));
+	}, 
+	poll: function(){
+		$.ajax({
+			url:'http://192.168.18.16:4568', 
+			dataType:'jsonp',         
+			success: function(data){
+				if(data.pump){
+					$(".pump-status").html("På").removeClass('off').addClass('on');	 
+					$(".pump-btn").html('Stäng Av');
+				}else{
+					$(".pump-status").html("Av").removeClass('on').addClass('off');					
+					$(".pump-btn").html('Sätt På');
+				}
+				
+			}, 
+			error: function(){
+				
+			}
+		});
+	}, 
+	toggle_pump: function(){
+		$.ajax({
+			url:'http://192.168.18.16:4568/write', 
+			dataType:'jsonp',   
+			data: {pump: true},
+			success: function(data){
+				if(data.pump){
+					$(".pump-status").html("På").removeClass('off').addClass('on');	 
+					$(".pump-btn").html('Stäng Av');
+				}else{
+					$(".pump-status").html("Av").removeClass('on').addClass('off');					
+					$(".pump-btn").html('Sätt På');
+				}
+				
+			}, 
+			error: function(){
+				
+			}
+		});
+	}, 
+	toggle_light: function(e){    
+		var color = $(e.currentTarget).attr('data-color');
+		$.ajax({
+			url:'http://192.168.18.16:4568/light', 
+			dataType:'jsonp',   
+			data: {light: color},
+			success: function(data){
+				if(data.pump){
+					$(".pump-status").html("På").removeClass('off').addClass('on');	 
+					$(".pump-btn").html('Stäng Av');
+				}else{
+					$(".pump-status").html("Av").removeClass('on').addClass('off');					
+					$(".pump-btn").html('Sätt På');
+				}
+				
+			}, 
+			error: function(){
+				
+			}
+		});
+	}
+}
+
+function admin(){
+	window.admin = Object.create(commander).initialize({});
+}

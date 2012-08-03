@@ -5,7 +5,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string    :photo
       t.string    :temperature
       t.integer   :ride_no
-      t.datetime  :ride_time
+      t.string    :ride_time
       t.timestamps
     end    
   end
