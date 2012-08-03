@@ -76,7 +76,8 @@ var commander = {
 		$.ajax({
 			url:'http://kanan.vassaro.net:4568', 
 			dataType:'jsonp',         
-			success: function(data){
+			success: function(data){    
+				console.log(data);
 				if(data.pump){
 					$(".pump-status").html("På").removeClass('off').addClass('on');	 
 					$(".pump-btn").html('Stäng Av');
