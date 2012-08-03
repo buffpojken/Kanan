@@ -77,10 +77,25 @@ var commander = {
 			url:'http://kanan.vassaro.net:4568', 
 			dataType:'jsonp',         
 			success: function(data){    
-				console.log(data);
+				if(data.green){
+					$(".light-btn .on").addClass('active');
+				}else{
+					$(".light-btn .on").removeClass('active');					
+				}                                        
+				if(data.yellow){
+					$(".light-btn .yellow").addClass('active');
+				}else{
+					$(".light-btn .yellow").removeClass('active');					
+				}                                        
+				if(data.red){
+					$(".light-btn .off").addClass('active');
+				}else{
+					$(".light-btn .off").removeClass('active');					
+				}                                        
+
 				if(data.pump){
 					$(".pump-status").html("På").removeClass('off').addClass('on');	 
-					$(".pump-btn").html('Stäng Av');
+					$(".pump-btn").html('Stäng Av');     					
 				}else{
 					$(".pump-status").html("Av").removeClass('on').addClass('off');					
 					$(".pump-btn").html('Sätt På');
