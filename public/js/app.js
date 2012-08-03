@@ -134,5 +134,5 @@ var commander = {
 }
 
 function admin(){
-	window.admin = Object.create(commander).initialize({});
+	window.admin_tool = Object.create(commander).initialize({});
 }
