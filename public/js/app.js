@@ -73,7 +73,7 @@ var commander = {
 	}, 
 	poll: function(){
 		$.ajax({
-			url:'http://192.168.18.16:4568', 
+			url:'http://kanan.vassaro.net:4568', 
 			dataType:'jsonp',         
 			success: function(data){
 				if(data.pump){
@@ -92,7 +92,7 @@ var commander = {
 	}, 
 	toggle_pump: function(){
 		$.ajax({
-			url:'http://192.168.18.16:4568/write', 
+			url:'http://kanan.vassaro.net:4568/write', 
 			dataType:'jsonp',   
 			data: {pump: true},
 			success: function(data){
@@ -113,7 +113,7 @@ var commander = {
 	toggle_light: function(e){    
 		var color = $(e.currentTarget).attr('data-color');
 		$.ajax({
-			url:'http://192.168.18.16:4568/light', 
+			url:'http://kanan.vassaro.net:4568/light', 
 			dataType:'jsonp',   
 			data: {light: color},
 			success: function(data){
