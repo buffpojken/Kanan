@@ -93,7 +93,7 @@ var commander = {
 	}, 
 	toggle_pump: function(){
 		$.ajax({
-			url:'http://kanan.vassaro.net:4568/write', 
+			url:'http://kanan.vassaro.net:4568/pump', 
 			dataType:'jsonp',   
 			data: {pump: true},
 			success: function(data){
