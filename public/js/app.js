@@ -70,6 +70,7 @@ var commander = {
 		}                                     
 		$(".pump-btn").bind('click', this.toggle_pump.bind(this));
 		$(".light-btn a").bind('click', this.toggle_light.bind(this));
+		return this;
 	}, 
 	poll: function(){
 		$.ajax({
