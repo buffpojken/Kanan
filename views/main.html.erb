@@ -37,8 +37,12 @@
 		<table class="table-striped table">      
 		  <tbody>
 		    <tr>
-		      <td>Vattentemp</td>
-		      <td><%= @temp.data_value %>°</td>
+		      <td>Vattentemp</td>     
+	 				<% if @temp %>
+		      	<td><%= @temp.data_value %>°</td>
+					<% else %>
+	      		<td>N/A</td>					
+					<% end %>
 		    </tr>
 		    <tr>
 		      <td>Väder</td>
