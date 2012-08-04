@@ -81,8 +81,12 @@ post '/photo' do
   end    
 end  
 
-get '/admin' do 
-  erb :admin
+get '/admin' do    
+  if params[:admin] == "djupingar"
+    erb :admin
+  else
+    "Not Found"
+  end
 end
 
 ActiveRecord::Base.establish_connection(
