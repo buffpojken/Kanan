@@ -161,7 +161,8 @@ var commander = {
 			error: function(){
 				
 			}
-		});		
+		});	
+		return false;	
 	}
 }
 
