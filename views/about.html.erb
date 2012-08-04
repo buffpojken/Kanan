@@ -5,40 +5,63 @@
 
 <div class="row">
 	<div class="span8">
-		<h3>Kanan</h3>
+		<h3>Historik</h3>
 		<p>
-			Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna.
+			Till första Boomerang (2003) gjordes en hel hög med jippon för deltagarna, bland annat kanotbio och hoppborgar. Det talades redan då om att bygga en vattenrutschkana. Sedan dess har Fredrik med jämna mellanrum letat efter vattenrutschkanor på kända annons-siter på internet.
 		</p>
 		<p>
-			Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna.
+			Den 16e Augusti 2011 Ringde Fredrik till David och meddelade att han hittat en begagnad kana till ett bra pris på blocket.
+			David befann sig på WSJ arbetandes med site services. Vid fikabordet där David satt och tog emot samtalet satt också stora delar av de som varit inblandade i bygget.
 		</p>        
-		<h3>Sensorer</h3>
+		<h3>Transport, Planering & Projektering</h3>
 		<p>
-			Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna.
+			Transporten av kanan löstes under hösten 2011, ett lastbilslass och någon släpvagn fylld med plastbitar och stålkonstruktion. Planering av bygget har pågått sedan dess.                 
+		</p><p>
+			Originalritningar från den ursprungliga platsen lokaliserades med hjälp av tillverkaren, därefter gjordes egna ritningar i både två och tre dimensioner. För 3d-ritningens skull mättes terrängen in och sedan dess har det klurats på konstruktion.
 		</p>
+		<h3>Renoveringen</h3>
 		<p>
-			Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna.
-		</p>        
-		<h3>Internet</h3>
-		<p>
-			Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna.
+Den stora renoveringen av kanans plastskador skedde omkring midsommar där vi fick hjälp av Nisse som visade vägen för hur det skulle gå till.		
 		</p>
+		<h3>Bygget</h3>
 		<p>
-			Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna.
-		</p>        
-	</div>         
+			Bygget av kanan påbörjades 21 Juli, och det första provåket gjordes 29 Juli.
+			Arbetslaget har varierat mellan 4 och 8 personer, totalt har ~1000 arbetstimmar lagts på bygget.
+		</p>
+		<h3>Elektronik</h3>
+		<p>
+			Kanan styrs helt elektroniskt via ett stort antal komponenter som reglerar allt från vattenpump och ljud till stoppljus och målkamera. Samtliga kontroller är tillgängliga från Funk-teamets mobiltelefoner så hela vattenruschkanan kan styras från en smartphone. Komponenterna pratar med varandra över ett UDP-baserat protokoll och kommunicerar via både trådlöst internet, nätverkskabel och hemmabyggda lösningar. 
+			<div class="pull-right">
+				<img src="/img/BILD.png" style="width:250px;margin:0px 0px 10px 10px;" />
+				<br />
+				<caption><i>Kontrollpanelen</i></caption>
+			 </div>
+		</p>                                                                                                                       
+		<h5>Pumpen</h5>
+		<p>
+			Pumpen styrs via en PLC och ett php-bibliotek kallat Beckhoff (http://github.com/stampzilla), som i sin tur kommunicerar med en demon skriven i Ruby och Eventmachine som exponerar ett API. API:t anropas i sin tur av en mobil hemsida via JSONP.
+		</p>                                                                                             
+		<h5>Stoppljus</h5>
+		<p>
+			Stoppljuset styrs på två olika sätt, antingen i s.k. automatläge där PLC:en själv administrerar start/stopp genom sensorer i början och slutet på banan eller i kommandoläge där PLC:en och Ruby-demonen samarbetar och gemensamt hanterar läge på stoppljuset. Stoppljust kan även styras på manuell override genom Funk-teamets mobiltelefoner.
+		</p>
+		<h5>Musik/Ljudeffekter</h5>
+		<p>
+			 Kanan har ett ljudsystem som kan kontrolleras från mobiltelefonerna för att dels spela ljudeffekter såsom applåder eller gapskratt, dels för att spela t.ex. webbradio eller mp3-bibliotek. Ljudeffekterna kontrolleras med en annan Ruby-demon som lyssnar på samma UDP-protokoll som resten av systemet. Detta körs på en FitPC inkopplad till PA-anläggningen.
+		</p> 
+	 </div>         
 	<div class="span4">
 		<dl>
 			<dt>Nedlagt arbete</dt>
-			<dd>~ 900 arbetstimmar</dd>
+			<dd>~ 1000 arbetstimmar</dd>
 			<dt>Kapacitet</dt>
 			<dd>120 personer/h eller 1400 minutliter :)</dd>
-			<dt>Annan statistik</dt>
-			<dd>Datapunkt 1</dd>
-			<dt>Annan statistik</dt>
-			<dd>Datapunkt 2</dd>
-			<dt>Annan statistik</dt>
-			<dd>Datapunkt 3</dd>
+			<dt>Styrdatorer</dt>
+			<dd>4</dd>
+			<dt>Sektioner</dt>
+			<dd>32</dd>
+			<dt>Språk</dt>
+			<dd>AMS, PHP, Ruby, C, Javascript, BASH</dd>
 		</dl>
 	</div>
 </div>
