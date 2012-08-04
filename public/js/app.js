@@ -70,6 +70,7 @@ var commander = {
 		}                                     
 		$(".pump-btn").bind('click', this.toggle_pump.bind(this));
 		$(".light-btn a").bind('click', this.toggle_light.bind(this));
+		$(".sfx a").bind('click', this.play.bind(this));
 		return this;
 	}, 
 	poll: function(){
@@ -147,6 +148,20 @@ var commander = {
 				
 			}
 		});
+	},
+	play: function(e){
+		var sound = $(e.currentTarget).attr('data-sound');
+		$.ajax({
+			url:'http://192.168.3.15:4568/sound', 
+			dataType:'jsonp',   
+			data: {sound: sound},
+			success: function(data){
+				console.log(data);
+			}, 
+			error: function(){
+				
+			}
+		});		
 	}
 }
 
