@@ -11,3 +11,4 @@ gem 'mysql2', '0.2.7'
 gem "carrierwave"
 gem 'will_paginate', '~> 3.0.0'
 gem 'mini_magick'
+gem 'listen'
