@@ -39,7 +39,7 @@ end
 get '/' do  
   @photos   = Photo.last
   @data     = Photo.order("created_at desc").limit(3)  
-  @toplist  = Photo.order("ride_time desc").limit(3)
+  @toplist  = Photo.order("ride_time").limit(3)
   @temp     = DataPoint.get("temperature")
    respond_to do |page|
      page.html{ erb :main }  
