@@ -24,7 +24,7 @@
 		<h3>Topplista</h3>
 		<table class="table-striped table">      
 		  <tbody>
-				<%= erb :list, :layout => false, :locals => {:list => @toplist}%>				
+				<%= erb :list, {:layout => false, :locals => {:list => @toplist}}%>				
 		  </tbody>
 		</table>
 	</div>
