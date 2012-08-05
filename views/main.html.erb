@@ -19,7 +19,7 @@
 			<% @data.each do |data| %>
 		    <tr>
 		      <td><%= data.total_ride_time %></td>
-		      <td><%= data.temperature %>°C</td>   
+		      <td><%= data.temperature/1000.0 %>°C</td>   
 					<td><%= data.created_at.strftime("%H:%M:%S")%></td>
 		   </tr>    
 			<% end %>
@@ -33,7 +33,7 @@
 				<% @toplist.each do |data| %>
 			    <tr>
 			      <td><%= data.total_ride_time %></td>
-			      <td><%= data.temperature %>°C</td>   
+			      <td><%= data.temperature/1000.0 %>°C</td>   
 						<td><%= data.created_at.strftime("%H:%M:%S")%></td>
 			   </tr>    
 				<% end %>
