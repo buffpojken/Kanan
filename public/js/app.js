@@ -57,7 +57,23 @@ function setup(){
 
 	window.mySwipe = new Swipe(
 		document.getElementById('slider')
-	);	
+	);	           
+	
+	setInterval(function(){
+		$.ajax({
+			url:'/refresh.html', 
+			data: { type: 'latest'}, 
+			type:'get',
+			headers: {'Accept':'text/html'},
+			dataType:'html',
+			success: function(html, resp, xhr){
+				$("#latest tbody").html(html);
+			}, 
+			error: function(){
+				
+			}
+		})
+	}, 3000);
 }
 
 

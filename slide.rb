@@ -45,7 +45,14 @@ get '/' do
      page.html{ erb :main }  
      page.js{ jsonify :main }
    end
-end         
+end            
+
+get '/refresh' do 
+  @data     = Photo.order("created_at desc").limit(3)  
+  respond_to do |format|     
+    format.html{ erb :list, {:locals => {:list => @data}, :layout => false} }    
+  end
+end
 
 get '/about' do 
   respond_to do |page|

@@ -14,7 +14,7 @@
 <div class="row">
 	<div class="span4">
 		<h3>Senaste Åk</h3>
-		<table class="table-striped table">      
+		<table class="table-striped table" id="latest">      
 		  <tbody>               
 				<%= erb :list, {:layout => false, :locals => {:list => @data}}%>
 		  </tbody>
@@ -22,7 +22,7 @@
 	</div>
 	<div class="span4">
 		<h3>Topplista</h3>
-		<table class="table-striped table">      
+		<table class="table-striped table" id="toplist">      
 		  <tbody>
 				<%= erb :list, {:layout => false, :locals => {:list => @toplist}}%>				
 		  </tbody>
