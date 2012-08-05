@@ -16,13 +16,7 @@
 		<h3>Senaste Åk</h3>
 		<table class="table-striped table">      
 		  <tbody>               
-			<% @data.each do |data| %>
-		    <tr>
-		      <td><%= data.total_ride_time %></td>
-		      <td><%= (data.temperature.to_f/1000.0) %>°C</td>   
-					<td><%= data.created_at.strftime("%H:%M:%S")%></td>
-		   </tr>    
-			<% end %>
+				<%= erb :list, {:layout => false, :list => @data}%>
 		  </tbody>
 		</table>
 	</div>
@@ -30,13 +24,7 @@
 		<h3>Topplista</h3>
 		<table class="table-striped table">      
 		  <tbody>
-				<% @toplist.each do |data| %>
-			    <tr>
-			      <td><%= data.total_ride_time %></td>
-			      <td><%= (data.temperature.to_f/1000.0) %>°C</td>   
-						<td><%= data.created_at.strftime("%H:%M:%S")%></td>
-			   </tr>    
-				<% end %>
+				<%= erb :list, {:layout => false, :list => @toplist}%>				
 		  </tbody>
 		</table>
 	</div>
