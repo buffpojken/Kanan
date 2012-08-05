@@ -16,7 +16,7 @@
 		<h3>Senaste Åk</h3>
 		<table class="table-striped table">      
 		  <tbody>               
-				<%= erb :list, {:layout => false, :list => @data}%>
+				<%= erb :list, {:layout => false, :locals => {:list => @data}}%>
 		  </tbody>
 		</table>
 	</div>
@@ -24,7 +24,7 @@
 		<h3>Topplista</h3>
 		<table class="table-striped table">      
 		  <tbody>
-				<%= erb :list, {:layout => false, :list => @toplist}%>				
+				<%= erb :list, :layout => false, :locals => {:list => @toplist}%>				
 		  </tbody>
 		</table>
 	</div>
