@@ -66,7 +66,11 @@ get '/photos' do
   respond_to do |page|                                      
     page.html{ erb :photos, :layout => false }
   end
-end          
+end                                     
+
+get '/counter' do 
+  Photo.last.ride_no.to_s
+end
 
 post '/photo' do 
   photo = Photo.create({

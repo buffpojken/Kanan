@@ -15,7 +15,7 @@ require './models/photo_uploader.rb'
 Dir.glob(File.dirname(__FILE__)+"/models/*.rb").each do |fi|
   require fi
 end
-Listen.to('test/testinput') do |modified, added, removed|
+Listen.to('/home/stamp/incomming') do |modified, added, removed|
   added.each do |file_path|
     ride    = Photo.find_by_id(File.basename(file_path))    
     while(ride.nil?)
