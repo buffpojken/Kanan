@@ -1,4 +1,5 @@
-<% Array(@photos).each do |photo| %>
+<% Array(@photos).each do |photo| %>     
+<% unless photo.photo.blank? %>
 <li class="image-item" data-photo-url="<%= photo.photo.url %>"> 
 	<div class="slide" id="slider">
 		<ul class="unstyled">
@@ -24,5 +25,6 @@
 			</li>
 		</ul>              
 	</div>
-</li>			
+</li>		
+<% end %>	
 <% end %>
