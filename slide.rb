@@ -69,7 +69,7 @@ get '/photos' do
 end                                     
 
 get '/counter' do 
-  Photo.last.ride_no.to_s
+  Photo.last.ride_no.to_s+".jpg"
 end
 
 post '/photo' do 
