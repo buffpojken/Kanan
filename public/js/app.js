@@ -1,6 +1,6 @@
 function setup(){     
 	window.kana = {
-		current_page: 1, 
+		current_page: 2, 
 		url: 'http://kanan.vassaro.net'
 	}
 
