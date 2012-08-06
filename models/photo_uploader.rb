@@ -7,6 +7,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   def store_dir
     File.join(File.dirname(__FILE__), "..", "public", "system/photos/#{model.id}/")
+  end                                                                            
+  
+  def cache_dir
+    File.join(File.dirname(__FILE__), "..", "public", "tmp/photos/#{model.id}/")    
   end
 
 end
