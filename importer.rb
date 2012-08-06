@@ -18,6 +18,10 @@ end
 Listen.to('test/testinput') do |modified, added, removed|
   added.each do |file_path|
     ride    = Photo.find_by_id(File.basename(file_path))    
+    while(ride.nil?)
+      ride = Photo.find_by_id(File.basename(file_path))
+      sleep 1
+    end
     image   = MiniMagick::Image.open(file.path)
     splash  = MiniMagick::Image.open('resources/splash.png')
     
