@@ -37,7 +37,7 @@ after do
 end
 
 get '/' do  
-  @photos   = Photo.order("created_at desc").paginate(:per_page => 8, :page => 1)
+  @photos   = Photo.where(["photo is not null"]).order("created_at desc").paginate(:per_page => 8, :page => 1)
   @data     = Photo.order("created_at desc").limit(3)  
   @toplist  = Photo.order("ride_time").limit(3)
   @temp     = DataPoint.get("temperature")
@@ -67,8 +67,8 @@ get '/about' do
   end
 end
 
-get '/photos' do 
-  @photos = Photo.order("created_at desc").paginate(:per_page => 8, :page => (params[:page] || 2))
+get '/photos' do        
+  @photos = Photo.where(["photo is not null"]).order("created_at desc").paginate(:per_page => 8, :page => (params[:page] || 2))
   headers('X-More-Content' => @photos.next_page.to_s)
   respond_to do |page|                                      
     page.html{ erb :photos, :layout => false }
