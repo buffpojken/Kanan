@@ -29,7 +29,7 @@ function setup(){
 			error: function(){
 				_t.removeClass('loading');
 			}
-		})  
+		});
 	});             
 	
 	$(".share-on-tw").live('click', function(e){
