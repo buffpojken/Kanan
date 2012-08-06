@@ -33,7 +33,7 @@ Listen.to('/home/stamp/incomming') do |modified, added, removed|
     image.combine_options do |image|
       image << "-font resources/Averia-Regular.ttf -pointsize 60 -size 450x -gravity northwest -stroke '#fff' -fill '#fff' -strokewidth 2 -annotate 0x0+20+22 '" + (ride.temperature.to_f/1000.0).to_s + "°" + "'"
       image << "-font resources/Averia-Regular.ttf -pointsize 60 -size 450x -gravity northeast -stroke '#fff' -fill '#fff' -strokewidth 2 -annotate 0x0+20+22 '" + "#" + ride.ride_no.to_s + "'"
-      image << "-font resources/Averia-Regular.ttf -pointsize 60 -size 450x -gravity southeast -stroke '#86358B' -fill '#86358B' -strokewidth 2 -annotate 0x0+20+22 '" + ride.total_ride_time.to_s + "'"
+      image << "-font resources/Averia-Regular.ttf -pointsize 60 -size 450x -gravity southeast -stroke '#86358B' -fill '#86358B' -strokewidth 2 -annotate 0x0+20+22 '" + ride.total_ride_time.to_s + " sek'"
     end          
     filepath = File.join('tmp', 'photos', rand(100000).to_s+".jpg")
     image.write(filepath)
