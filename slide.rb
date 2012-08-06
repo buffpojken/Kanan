@@ -54,6 +54,13 @@ get '/refresh' do
   end
 end
 
+get '/stream' do 
+  @data  = Photo.where(["photo is not null"]).order("created_at desc").limit(1)
+  respond_to do |page|
+    page.html{ erb :stream }
+  end
+end
+
 get '/about' do 
   respond_to do |page|
     page.html{ erb :about }
