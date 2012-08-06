@@ -61,7 +61,7 @@ get '/about' do
 end
 
 get '/photos' do 
-  @photos = Photo.paginate(:per_page => 3, :page => (params[:page] || 1))
+  @photos = Photo.order("created_at desc").paginate(:per_page => 3, :page => (params[:page] || 1))
   headers('X-More-Content' => @photos.next_page.to_s)
   respond_to do |page|                                      
     page.html{ erb :photos, :layout => false }
