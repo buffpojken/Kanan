@@ -13,4 +13,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
     File.join(File.dirname(__FILE__), "..", "public", "tmp/photos/#{model.id}/")    
   end
 
+  def default_url
+    "http://www.etechmag.com/wp-content/uploads/2012/02/Anonymous...jpg"
+  end
 end
