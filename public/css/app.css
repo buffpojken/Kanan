@@ -5,7 +5,7 @@ body{margin-top:50px}
 .loading *{display:none}
 .photo-mask{background-color:rgba(0,0,0,0.6);width:100%;position:absolute;right:0px;top:-80px;height:70px;-webkit-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.75);-moz-box-shadow:0px 4px 5px rgba(50, 50, 50, 0.75);box-shadow:0px 4px 5px rgba(50, 50, 50, 0.75);-webkit-transition: all 0.2s linear;-moz-transition: all 0.2s linear;-o-transition: all 0.2s linear;-ms-transition: all 0.2s linear;transition: all 0.2s linear;}
 .image-item .image:hover .photo-mask{top:0px}
-.share-buttons{position:relative;margin:15px auto;width:100%;}
+.share-buttons{position:relative;margin:20px 0px 0px 8px;width:100%;}
 .share-buttons-phone{width:100%;text-align:center;margin:5px 0px 0px 0px}
 .on{color:green}
 .off{color:red}
