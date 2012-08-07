@@ -23,13 +23,14 @@ if (typeof Object.create !== 'function') {
 			  url: 'http://kanan.vassaro.net/stream.js?callback=',
 			  dataType: 'jsonp',
 			  success: function(data){             
-				  var i = new Image().url = data.image.url;
+				  var i = new Image();
 					i.onload = function(){
 						_t.el.find('img').animate({opacity:0}, function(){
 							_t.el.find('img').attr('src', data.image.url);
 							_t.el.find('img').animate({opacity:100});
 						})
-					}
+					}    
+					i.src = data.image.url;
 				} 	
 			});
 		}, 
