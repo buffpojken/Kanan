@@ -19,14 +19,11 @@ if (typeof Object.create !== 'function') {
 		}, 
 		refresh: function(){
 			$.ajax({
-				url:'/stream.js', 
-				type:'jsonp', 
-				success: function(data){
+			  url: '/stream',
+			  dataType: 'json',
+			  success: function(data){
 					console.log(data);
-				}, 
-				error: function(){
-					
-				}
+				} 	
 			});
 		}, 
 		_setup_element: function(){
