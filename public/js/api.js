@@ -35,7 +35,7 @@ if (typeof Object.create !== 'function') {
 			});
 		}, 
 		_setup_element: function(){
-			this.el.css({'background-image':'url(http://kanan.vassaro.net/img/boomerang-loader.gif)', 'background-position':'center center'}).append($("<img>").attr({'style':'width:350px; height:263px;cursor:pointer;'}));
+			this.el.css({'background-image':'url(http://kanan.vassaro.net/img/boomerang-loader.gif)', 'background-position':'center center', 'background-repeat':'no-repeat'}).append($("<img>").attr({'style':'width:350px; height:263px;cursor:pointer;'}));
 			this.el.find('img').bind('click', function(){
 				window.open('http://kanan.vassaro.net');
 			});
