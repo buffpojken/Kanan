@@ -25,7 +25,7 @@ if (typeof Object.create !== 'function') {
 			  success: function(data){             
 					_t.el.find('img').animate({opacity:0}, function(){
 						_t.el.find('img').attr('src', data.image.url);
-						_t.el.animate({opacity:100});
+						_t.el.find('img').animate({opacity:100});
 					})
 				} 	
 			});
