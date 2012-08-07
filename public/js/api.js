@@ -28,13 +28,11 @@ if (typeof Object.create !== 'function') {
 			});
 		}, 
 		_setup_element: function(){
-			this.el.append($("<img>").attr({'style':'border:1px solid red; width:350px; height:263px;'}));
+			this.el.append($("<img>").attr({'style':'width:350px; height:263px;'}));
 			this.el.find('img').bind('click', function(){
 				window.open('http://kanan.vassaro.net');
 			});
 		}
 	}
-	$(function(){
-		window.kanan_api = Object.create(api).initialize('#kanan-root');
-	});
+	window.kanan_api = Object.create(api).initialize('#kanan-root');
 })(jQuery, window);
