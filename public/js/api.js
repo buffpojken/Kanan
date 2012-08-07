@@ -18,11 +18,12 @@ if (typeof Object.create !== 'function') {
 			}, 5000);
 		}, 
 		refresh: function(){
+			var _t = this;
 			$.ajax({
-			  url: '/stream.js?callback=',
-			  dataType: 'json',
+			  url: 'http://kanan.vassaro.net/stream.js?callback=',
+			  dataType: 'jsonp',
 			  success: function(data){
-					console.log(data);
+					_t.el.attr('src', data.image.url);
 				} 	
 			});
 		}, 

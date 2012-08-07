@@ -58,7 +58,7 @@ get '/stream' do
   @data  = Photo.where(["photo is not null"]).order("RAND()").limit(1).first
   respond_to do |page|
     page.html{ erb :stream }                   
-    page.js{ "#{params[:callback]}(#{{:image => {:url => @data.photo.url}}.to_json})" }
+    page.js{ "#{params[:callback]}(#{{:image => {:url => "http://kanan.vassaro.net" + @data.photo.url}}.to_json})" }
   end
 end
 
