@@ -22,13 +22,16 @@ if (typeof Object.create !== 'function') {
 			$.ajax({
 			  url: 'http://kanan.vassaro.net/stream.js?callback=',
 			  dataType: 'jsonp',
-			  success: function(data){
-					_t.el.attr('src', data.image.url);
+			  success: function(data){          
+					_t.el.find('img').attr('src', data.image.url);					
 				} 	
 			});
 		}, 
 		_setup_element: function(){
-			this.el.append($("<img>").attr({'style':'border:1px solid red; width:200px; height:150px;'}));
+			this.el.append($("<img>").attr({'style':'border:1px solid red; width:350px; height:263px;'}));
+			this.el.find('img').bind('click', function(){
+				window.open('http://kanan.vassaro.net');
+			});
 		}
 	}
 	$(function(){
