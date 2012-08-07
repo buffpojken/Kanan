@@ -66,8 +66,8 @@ get '/fastest' do
   @data = Photo.order("ride_time").limit(1).first   
   puts @data.inspect
   respond_to do |page|
-    page.html{(@data.ride_time / 1000).to_s}
-    page.txt{(@data.ride_time / 1000).to_s}
+    page.html{(@data.ride_time / 1000.0).to_s}
+    page.txt{(@data.ride_time / 1000.0).to_s}
   end
 end
 
