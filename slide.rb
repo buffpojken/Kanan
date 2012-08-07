@@ -55,9 +55,10 @@ get '/refresh' do
 end
 
 get '/stream' do 
-  @data  = Photo.where(["photo is not null"]).order("created_at desc").limit(1)
+  @data  = Photo.where(["photo is not null"]).order("RAND()").limit(1).first
   respond_to do |page|
-    page.html{ erb :stream }
+    page.html{ erb :stream }                   
+    page.js{ jsonify :stream }
   end
 end
 

@@ -1,0 +1,3 @@
+json.image do 
+	json.url "http://kanan.vassaro.net" + @data.photo.url
+end
