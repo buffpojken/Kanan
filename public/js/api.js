@@ -22,8 +22,11 @@ if (typeof Object.create !== 'function') {
 			$.ajax({
 			  url: 'http://kanan.vassaro.net/stream.js?callback=',
 			  dataType: 'jsonp',
-			  success: function(data){          
-					_t.el.find('img').attr('src', data.image.url);					
+			  success: function(data){             
+					_t.el.find('img').animate({opacity:0}, function(){
+						_t.el.find('img').attr('src', data.image.url);
+						_t.el.animate({opacity:100});
+					})
 				} 	
 			});
 		}, 
