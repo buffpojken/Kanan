@@ -19,7 +19,7 @@ if (typeof Object.create !== 'function') {
 		}, 
 		refresh: function(){
 			$.ajax({
-			  url: '/stream',
+			  url: '/stream.js?callback=',
 			  dataType: 'json',
 			  success: function(data){
 					console.log(data);
