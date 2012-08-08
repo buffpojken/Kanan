@@ -1,13 +1,15 @@
 <% list.each do |data| %>
   <tr>    
-		<% unless data.photo.blank? %>
-			<a href="<%= data.photo.url %>">
-		<% end %>
-    	<td><%= data.total_ride_time %></td>
+    	<td>
+				<% unless data.photo.blank? %>
+					<a href="<%= data.photo.url %>">
+				<% end %>					
+					<%= data.total_ride_time %>
+			 		<% unless data.photo.blank? %>
+						</a>
+					<% end %>
+			</td>
     	<td><%= (data.temperature.to_f/1000.0) %>°C</td>   
 			<td><%= data.created_at.strftime("%H:%M:%S - %a")%></td>
-		<% unless data.photo.blank? %>
-			</a>
-		<% end %>
  </tr>    
 <% end %>
